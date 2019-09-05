@@ -1,11 +1,10 @@
+## Installation
+1. Clone this repository: `git clone https://github.com/william3438d/terraform-nginx-container .`
 
-1. Git clone: 
+2. Generate SSH Key pair. Default name is mykey but it can be modified in vars.tf
 
-2. Generate SSH key pair. Default ssh key name is "mykey". You may use a different name but will need to modify the variable in vars.td
-Example: ssh-keygen -f mykey
+          ssh-keygen -f mykey
 
-3. Start Terraform script by typing in console: Terraform apply
 
-4. IP information will be displayed. You can then connect to Web Server.
-If you want to connect to App/Backend server, you can use ProxyCommand
+3. Once Terraform script is excuted, IP information of the VMs will be displayed. If you want to connect to App/Backend server, you can use ProxyCommand
 example: ssh -o ProxyCommand='ssh -i mykey -W %h:%p ubuntu@<web server IP>'  -i mykey ubuntu@<App server IP>
